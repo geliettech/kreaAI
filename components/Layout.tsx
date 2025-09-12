@@ -1,52 +1,93 @@
 "use client";
 import { ReactNode, useState, useEffect } from "react";
-import { FaShapes } from "react-icons/fa"; // Logo
-import { AiOutlineHome, AiOutlinePicture, AiOutlineVideoCamera, AiOutlineFile, AiOutlineAppstore, AiOutlineBell, AiOutlineUser } from "react-icons/ai";
-import { RiScissorsLine } from "react-icons/ri";
+import { IoMdHome } from "react-icons/io";
+import { IoChevronDownOutline } from "react-icons/io5";
+import { FaVideo, FaPaintBrush, FaFolder } from "react-icons/fa";
+import { AiOutlinePicture, AiOutlineAppstore, AiOutlineBell, AiOutlineUser } from "react-icons/ai";
+import { GiPencilBrush } from "react-icons/gi";
+import { ImTextColor } from "react-icons/im";
 import { BiSupport } from "react-icons/bi";
 import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
+import Link from 'next/link'
 
 export default function Layout({ children }: { children: ReactNode }) {
   const [darkMode, setDarkMode] = useState(false);
+  const [active, setActive] = useState("home"); // default active
 
   useEffect(() => {
     if (darkMode) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
   }, [darkMode]);
 
+  const navItems = [
+    { id: "home", icon: <IoMdHome /> },
+    { id: "image", icon: <AiOutlinePicture /> },
+    { id: "video", icon: <FaVideo /> },
+     { id: "pro", icon: <GiPencilBrush /> },
+    { id: "paint", icon: <FaPaintBrush /> },
+    { id: "text", icon: <ImTextColor /> },
+    { id: "support", icon: <FaFolder /> },
+  ];
+
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100">
+    <div className="min-h-screen">
       {/* Top Navbar */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900">
+      <header className="flex items-center justify-between py-12">
         {/* Logo + Text */}
         <div className="flex items-center gap-2">
-          <FaShapes className="text-xl" />
-          <span className="font-bold text-lg">Krea Clone</span>
+          <img src="logo.svg" alt="" className="w-6" />
+          <span className="font-semibold text-sm max-w-[240px] truncate">
+              benevolentinmibeibat
+            </span>
+            <IoChevronDownOutline className="text-lg" />
         </div>
 
         {/* Main Navigation */}
-        <nav className="flex gap-6 items-center text-neutral-600 dark:text-neutral-300">
-          <AiOutlineHome className="text-xl cursor-pointer" />
-          <AiOutlinePicture className="text-xl cursor-pointer" />
-          <AiOutlineVideoCamera className="text-xl cursor-pointer" />
-          <RiScissorsLine className="text-xl cursor-pointer" />
-          <AiOutlineFile className="text-xl cursor-pointer" />
-          <AiOutlineAppstore className="text-xl cursor-pointer" />
-          <BiSupport className="text-xl cursor-pointer" />
+        <nav className="flex gap-6 items-center p-2 rounded-lg">
+          {navItems.map((item) => (
+            <Link
+  key={item.id}
+  href="#"
+  onClick={() => setActive(item.id)}
+  className={`text-xl relative p-2 rounded-md transition-colors ${
+    active === item.id
+      ? "bg-white dark:bg-slate-500"
+      : "hover:bg-slate-200 dark:hover:bg-slate-500"
+  }`}
+>
+  {item.icon}
+</Link>
+
+          ))}
         </nav>
 
         {/* Right Side Controls */}
         <div className="flex items-center gap-5">
+           <div className="flex">
+            <AiOutlinePicture className="text-lg" />
+             <span className="font-semibold text-sm max-w-[240px] truncate">
+              Gallery
+            </span>
+          </div>
+          <div className="flex">
+            <BiSupport />
+             <span className="font-semibold text-sm max-w-[240px] truncate">
+              Support
+            </span>
+          </div>
+          
           <AiOutlineBell className="text-xl cursor-pointer" />
           <button onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? <MdOutlineLightMode className="text-xl" /> : <MdOutlineDarkMode className="text-xl" />}
+            {darkMode ? <MdOutlineDarkMode className="text-xl" /> : <MdOutlineLightMode className="text-xl" />}
           </button>
-          <AiOutlineUser className="text-xl cursor-pointer" />
+         <div className="w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 object-fit">
+             <AiOutlineUser className="text-xl cursor-pointer" />
+          </div>
         </div>
       </header>
 
       {/* Page Content */}
-      <main>{children}</main>
+      <div>{children}</div>
     </div>
   );
 }

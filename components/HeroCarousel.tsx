@@ -6,31 +6,57 @@ export default function HeroCarousel() {
   return (
     <section className="w-full">
       <Swiper slidesPerView={2} loop className="rounded-lg overflow-hidden">
+        {/* IMAGE SLIDE */}
         <SwiperSlide>
-          <div className="flex bg-neutral-100 dark:bg-neutral-800 h-[400px]">
-            <img src="/announce-wan-2-2-image.webp" alt="WAN 2.2" className="w-1/2 object-cover"/>
-            <div className="flex flex-col justify-center p-10 w-1/2">
+          <div
+            className="flex h-[400px] bg-[url('/announce-wan-2-2-image.webp')] bg-no-repeat bg-cover bg-center"
+          >
+            <div className="flex flex-col justify-center p-10 w-1/2 bg-black/40 text-white rounded-r-lg">
               <h2 className="text-4xl font-bold">WAN 2.2 Image generation</h2>
-              <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+              <p className="mt-2 text-sm">
                 Generate complex images with the brand new...
               </p>
-              <button className="mt-4 bg-neutral-900 dark:bg-neutral-100 dark:text-black text-white px-4 py-2 rounded-lg">
+              <button className="mt-4 bg-white text-black px-4 py-2 rounded-lg">
+                Try WAN 2.2
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+        
+                <SwiperSlide>
+          <div
+            className="flex h-[400px] bg-[url('/announce-wan-2-2-image.webp')] bg-no-repeat bg-cover bg-center"
+          >
+            <div className="flex flex-col justify-center p-10 w-1/2 bg-black/40 text-white rounded-r-lg">
+              <h2 className="text-4xl font-bold">WAN 2.2 Image generation</h2>
+              <p className="mt-2 text-sm">
+                Generate complex images with the brand new...
+              </p>
+              <button className="mt-4 bg-white text-black px-4 py-2 rounded-lg">
                 Try WAN 2.2
               </button>
             </div>
           </div>
         </SwiperSlide>
 
+        {/* VIDEO SLIDE */}
         <SwiperSlide>
-          <div className="flex bg-neutral-100 dark:bg-neutral-800 h-[400px]">
-            <img src="/flux.jpg" alt="FLUX 1" className="w-1/2 object-cover"/>
-            <div className="flex flex-col justify-center p-10 w-1/2">
-              <h2 className="text-4xl font-bold">FLUX 1 Krea</h2>
-              <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
-                We're making the weights to our FLUX Krea...
+          <div className="relative h-[400px] flex overflow-hidden">
+            <video
+              src="/OSSKreaFlux1_video.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="relative z-10 flex flex-col justify-center p-10 w-1/2 bg-black/50 text-white rounded-r-lg">
+              <h2 className="text-4xl font-bold">WAN 2.2 Video showcase</h2>
+              <p className="mt-2 text-sm">
+                Experience advanced AI video generation...
               </p>
-              <button className="mt-4 bg-neutral-900 dark:bg-neutral-100 dark:text-black text-white px-4 py-2 rounded-lg">
-                Learn More
+              <button className="mt-4 bg-white text-black px-4 py-2 rounded-lg">
+                Watch Demo
               </button>
             </div>
           </div>

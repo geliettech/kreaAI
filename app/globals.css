@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
@@ -9,13 +13,16 @@
   --font-Poppins: "Poppins", sans-serif;
 }
 /* base style */
-/* @layer base {
+@layer base {
   body {
     @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100;
     font-family: var(--font-Poppins);
     min-height: 100%;
   }
-} */
+  nav{
+    @apply bg-slate-100 dark:bg-slate-700;
+  }
+}
 
 /* components style: multiple css properties */
 /* @layer components { */
