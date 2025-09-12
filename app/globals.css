@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
-@import "swiper/css";
-@import "swiper/css/navigation";
-@import "swiper/css/pagination";
 
 @custom-variant dark (&:where(.dark, .dark *));
 /* Alternate option: @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
