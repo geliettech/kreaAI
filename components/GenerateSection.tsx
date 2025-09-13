@@ -67,7 +67,8 @@ export default function GenerateSection() {
           >
             <div className="mb-3">{f.icon}</div>
             <div>
-              
+              <h3 className="font-semibold">{f.name}</h3>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400">{f.desc}</p>
             </div>
             
             <button className="mt-4 bg-neutral-900 dark:bg-neutral-100 dark:text-black text-white px-3 py-1 rounded-lg">
