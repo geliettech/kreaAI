@@ -1,7 +1,7 @@
 import { AiOutlinePicture, AiOutlineVideoCamera, AiOutlineCloudSync } from "react-icons/ai";
 import { BiImageAdd, BiTransfer } from "react-icons/bi";
 import { RiScissorsLine } from "react-icons/ri";
-import { GiUpgrade, GiRailway } from "react-icons/gi"; // replacement icons
+import { GiUpgrade, GiRailway } from "react-icons/gi"; 
 
 
 const features = [
@@ -66,8 +66,10 @@ export default function GenerateSection() {
             className="border border-neutral-200 dark:border-neutral-700 p-4 rounded-lg shadow-sm flex flex-col items-start"
           >
             <div className="mb-3">{f.icon}</div>
-            <h3 className="font-semibold">{f.name}</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">{f.desc}</p>
+            <div>
+              
+            </div>
+            
             <button className="mt-4 bg-neutral-900 dark:bg-neutral-100 dark:text-black text-white px-3 py-1 rounded-lg">
               {f.btn}
             </button>
