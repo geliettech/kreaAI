@@ -1,6 +1,6 @@
 # 🚀 Next.js App
 
-This is a modern **Next.js 15** application built with **React 19**, styled using **TailwindCSS (via PostCSS)**, and enhanced with **React Icons** and **Swiper.js** for interactive UI components.
+This is a modern **Next.js 15 + Typescript** application built with **React 19**, styled using **TailwindCSS **, and enhanced with **React Icons** and **Swiper.js** for interactive UI components.
 
 ---
 
@@ -25,7 +25,7 @@ This is a modern **Next.js 15** application built with **React 19**, styled usin
 
 ```bash
 git clone https://github.com/geliettech/kreaAI
-cd your-repo-name
+cd kreaAI
 ```
 
 ### 2. Install Dependencies
