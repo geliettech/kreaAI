@@ -6,13 +6,13 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 export default function HeroCarousel() {
   return (
-    <section className="w-full py-8">
+    <section className="py-12">
       <Swiper
         slidesPerView={1.2}
         spaceBetween={20}
         breakpoints={{
           768: {
-            slidesPerView: 2,
+            slidesPerView: 1.5,
           },
         }}
         loop={true}
@@ -28,12 +28,15 @@ export default function HeroCarousel() {
         {/* IMAGE SLIDE */}
         <SwiperSlide>
           <div className="flex h-[400px] bg-[url('/announce-wan-2-2-image.webp')] bg-no-repeat bg-cover bg-center">
-            <div className="flex flex-col justify-center p-10 w-1/2 rounded-lg">
-              <h2 className="text-4xl font-bold">WAN 2.2 Image generation</h2>
+            <div className="flex flex-col justify-end items-end p-10 w-full  text-white rounded-lg">
+              <div>
+                <h2 className="text-2xl font-bold">WAN 2.2 Image generation</h2>
               <p className="mt-2 text-sm">
                 Generate complex images with the brand new...
               </p>
-              <button className="mt-4 px-4 py-2 rounded-lg">
+              </div>
+              
+              <button className="mt-4 bg-white text-black px-4 py-2 rounded-lg">
                 Try WAN 2.2
               </button>
             </div>
@@ -51,7 +54,7 @@ export default function HeroCarousel() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="relative z-10 flex flex-col justify-center p-10 w-1/2  rounded-lg">
+            <div className="relative z-10 flex flex-col justify-center p-10 w-1/2 text-white rounded-lg">
               <h2 className="text-4xl font-bold">WAN 2.2 Video showcase</h2>
               <p className="mt-2 text-sm">
                 Experience advanced AI video generation...
