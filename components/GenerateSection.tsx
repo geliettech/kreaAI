@@ -59,19 +59,19 @@ export default function GenerateSection() {
   return (
     <section className="px-6 py-10">
       <h2 className="text-2xl font-semibold mb-6">Generate</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
         {features.map((f) => (
           <div 
             key={f.name} 
-            className="border border-neutral-200 dark:border-neutral-700 p-4 rounded-lg shadow-sm flex flex-col items-start"
+            className="p-4 rounded-lg shadow-sm flex items-center gap-6"
           >
-            <div className="mb-3">{f.icon}</div>
+            <div className="text-3xl mb-3">{f.icon}</div>
             <div>
               <h3 className="font-semibold">{f.name}</h3>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400">{f.desc}</p>
+            <p className="text-xs">{f.desc}</p>
             </div>
             
-            <button className="mt-4 bg-neutral-900 dark:bg-neutral-100 dark:text-black text-white px-3 py-1 rounded-lg">
+            <button className="mt-4 bg-slate-100 dark:bg-slate-600 text-slate-900 dark:text-white font-semibold text-sm px-3 py-1 rounded-lg">
               {f.btn}
             </button>
           </div>

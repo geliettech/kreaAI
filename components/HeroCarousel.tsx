@@ -58,7 +58,7 @@ export default function HeroCarousel() {
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
   />
-  <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-between items-center p-6 text-white bg-black/40">
+  <div className="absolute bottom-0 left-0 right-0 z-10 flex justify-between items-center p-6 text-white">
     <div>
       <h2 className="text-2xl font-bold">WAN 2.2 Video showcase</h2>
       <p className="mt-2 text-sm">

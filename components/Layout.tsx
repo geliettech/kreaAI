@@ -2,9 +2,7 @@
 
 import { ReactNode, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-
-import { IoMdHome } from "react-icons/io";
+import Link from "next/link";import { IoMdHome } from "react-icons/io";
 import { IoChevronDownOutline } from "react-icons/io5";
 import { FaVideo, FaPaintBrush, FaFolder } from "react-icons/fa";
 import { AiOutlinePicture, AiOutlineAppstore, AiOutlineBell, AiOutlineUser } from "react-icons/ai";
